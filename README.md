@@ -66,7 +66,7 @@ $$
 After the value function has converged, we can determine a policy $\pi \approx \pi_*$ such that:
 
 $$
- \pi(s) = \underset{a}{\operatorname{argmax}} p_h[\mathbb{1}_{s+a=100} + \gamma v(s+a)] + (1-p_h)\gamma v(s-a)
+ \pi(s) = \argmax_a p_h[\mathbb{1}_{s+a=100} + \gamma v(s+a)] + (1-p_h)\gamma v(s-a)
 $$
 
 The value iteration algorithm is given below in pseudocode. Note that the policy computation only happens after the value function has approximately converged, but we can think of the value function update using Bellman's Optimality Equation as doing one round of greedy action selection while doing the value update:
